@@ -2,6 +2,7 @@
 
 Bioactivity prediction of growth inhibition in Pseudomonas aeruginosa, trained as binary (active/inactive) classifiers from publicly available data in ChEMBL. Independent models are trained on multiple bioactivity datasets, corresponding to single-point (percent inhibition) and dose-response (MIC) assays, among others. A ranking score is provided for each model alongside a combined consensus score.
 
+This model was incorporated on 2026-05-19.
 
 
 ## Information
@@ -43,8 +44,11 @@ _10 of 22 columns are shown_
 ### Source and Deployment
 - **Source:** `Local`
 - **Source Type:** `Internal`
+- **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos2e3s.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos2e3s.zip)
 
 ### Resource Consumption
+- **Model Size (Mb):** `187`
+- **Environment Size (Mb):** `1888`
 
 
 ### References
