@@ -1,6 +1,6 @@
 Identifier: eos2e3s
 Slug: antimicrobial-activity-paeruginosa
-Status: In maintenance
+Status: Ready
 Title: Antimicrobial activity prediction against Pseudomonas aeruginosa from 
   public ChEMBL data
 Description: Bioactivity prediction of growth inhibition in Pseudomonas 
@@ -42,7 +42,7 @@ Source Code: https://github.com/ersilia-os/chembl-antimicrobial-models
 License: GPL-3.0-or-later
 Contributor: arnaucoma24
 Incorporation Date: '2026-05-19'
-Last Packaging Date: '2026-05-21'
+Last Packaging Date: '2026-06-01'
 Release: v1.0.0
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos2e3s.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos2e3s
@@ -51,9 +51,9 @@ Docker Architecture:
   - ARM64
 Model Size: 290.0
 Environment Size: 1889.0
-Image Size: 2345.31
-Computational Performance 1: 40.83
-Computational Performance 2: 26.48
-Computational Performance 3: 28.73
-Computational Performance 4: 132.78
-Computational Performance 5: 591.86
+Image Size: 2450.29
+Computational Performance 1: 52.08
+Computational Performance 2: 45.03
+Computational Performance 3: 40.75
+Computational Performance 4: 248.38
+Computational Performance 5: 1224.49
