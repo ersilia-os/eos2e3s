@@ -1,6 +1,6 @@
 # Antimicrobial activity prediction against Pseudomonas aeruginosa from public ChEMBL data
 
-Bioactivity prediction of growth inhibition in Pseudomonas aeruginosa, trained as binary (active/inactive) classifiers from publicly available data in ChEMBL. Independent models are trained on multiple bioactivity datasets, corresponding to single-point (Inhibition) and dose-response (MIC) assays, among others. A ranking score is provided for each model alongside a combined consensus score.
+Ranks compounds for their likelihood of inhibiting Pseudomonas aeruginosa, an opportunistic pathogen with formidable intrinsic resistance. Binary classifiers were fitted separately over each usable pool of ChEMBL bioactivity data, keeping single-point percentage inhibition apart from dose-response MIC measurements because the two express activity differently. Their outputs feed a quality-weighted consensus that leans on models built from larger and better-supported assay pools.
 
 This model was incorporated on 2026-05-19.Last packaged on 2026-07-22.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2026-05-19.Last packaged on 2026-07-22.
 ### Output
 - **Output Dimension:** `15`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of antimicrobial activity against Pseudomonas aeruginosa from 14 ChEMBL-trained sub-models, plus a quality-weighted consensus score.
+- **Interpretation:** Probability of Pseudomonas aeruginosa growth inhibition across ChEMBL-trained sub-models, plus a weighted consensus.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
