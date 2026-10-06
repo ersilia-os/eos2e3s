@@ -1,6 +1,6 @@
 # Antimicrobial activity prediction against Pseudomonas aeruginosa from public ChEMBL data
 
-Ranks compounds for their likelihood of inhibiting Pseudomonas aeruginosa, an opportunistic pathogen with formidable intrinsic resistance. Binary classifiers were fitted separately over each usable pool of ChEMBL bioactivity data, keeping single-point percentage inhibition apart from dose-response MIC measurements because the two express activity differently. Their outputs feed a quality-weighted consensus that leans on models built from larger and better-supported assay pools.
+Bioactivity prediction of growth inhibition in Pseudomonas aeruginosa, trained as binary (active/inactive) classifiers from publicly available data in ChEMBL. Independent models are trained on multiple bioactivity datasets, corresponding to single-point (Inhibition) and dose-response (MIC) assays, among others. A ranking score is provided for each model alongside a combined consensus score.
 
 This model was incorporated on 2026-05-19.Last packaged on 2026-07-22.
 
@@ -23,21 +23,21 @@ This model was incorporated on 2026-05-19.Last packaged on 2026-07-22.
 ### Output
 - **Output Dimension:** `15`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of Pseudomonas aeruginosa growth inhibition across ChEMBL-trained sub-models, plus a weighted consensus.
+- **Interpretation:** Probability of antimicrobial activity against Pseudomonas aeruginosa from 14 ChEMBL-trained sub-models, plus a quality-weighted consensus score.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| consensus_score | float | high | Tanh-transformed quality-weighted consensus probability across the 14 sub-models. Recommended threshold: 0.848. |
-| chembl_single_point_0 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 185 assays (2222 compounds). Recommended threshold: 0.851. |
-| chembl_single_point_1 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 61 assays (859 compounds). Recommended threshold: 0.631. |
-| chembl_single_point_2 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 86 assays (852 compounds). Recommended threshold: 0.734. |
-| chembl_single_point_3 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 56 assays (815 compounds). Recommended threshold: 0.656. |
-| chembl_single_point_4 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 63 assays (739 compounds). Recommended threshold: 0.587. |
-| chembl_single_point_5 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 29 assays (418 compounds). Recommended threshold: 0.594. |
-| chembl_dose_response_0 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 902 assays (10556 compounds). Recommended threshold: 0.838. |
-| chembl_dose_response_1 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 753 assays (9559 compounds). Recommended threshold: 0.745. |
-| chembl_dose_response_2 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 486 assays (5179 compounds). Recommended threshold: 0.701. |
+| consensus_score | float | high | Quality-weighted consensus across the 14 sub-models on the same rank scale as the sub-models. Calibrated against a reference library of 50K drug-like molecules so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| chembl_single_point_0 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 185 assays (2222 compounds). Recommended threshold: 0.65. |
+| chembl_single_point_1 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 61 assays (859 compounds). Recommended threshold: 0.65. |
+| chembl_single_point_2 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 86 assays (852 compounds). Recommended threshold: 0.65. |
+| chembl_single_point_3 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 56 assays (815 compounds). Recommended threshold: 0.65. |
+| chembl_single_point_4 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 63 assays (739 compounds). Recommended threshold: 0.65. |
+| chembl_single_point_5 | float | high | Probability from sub-model trained on ChEMBL single-point signal-based pool of 29 assays (418 compounds). Recommended threshold: 0.65. |
+| chembl_dose_response_0 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 902 assays (10556 compounds). Recommended threshold: 0.65. |
+| chembl_dose_response_1 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 753 assays (9559 compounds). Recommended threshold: 0.65. |
+| chembl_dose_response_2 | float | high | Probability from sub-model trained on ChEMBL dose-response signal-based pool of 486 assays (5179 compounds). Recommended threshold: 0.65. |
 
 _10 of 15 columns are shown_
 ### Source and Deployment
